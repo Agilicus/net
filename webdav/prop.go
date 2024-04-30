@@ -175,6 +175,7 @@ func props(ctx context.Context, fs FileSystem, ls LockSystem, name string, pname
 
 	return propsForFile(ctx, f, fs, ls, name, pnames)
 }
+
 func propsForFile(ctx context.Context, f File, fs FileSystem, ls LockSystem, name string, pnames []xml.Name) ([]Propstat, error) {
 	fi, err := f.Stat()
 	if err != nil {
@@ -282,6 +283,7 @@ func allprop(ctx context.Context, fs FileSystem, ls LockSystem, name string, inc
 	return allpropForFile(ctx, f, fs, ls, name, include)
 
 }
+
 func allpropForFile(ctx context.Context, f File, fs FileSystem, ls LockSystem, name string, include []xml.Name) ([]Propstat, error) {
 	pnames, err := propnamesForFile(f)
 	if err != nil {
